@@ -1,15 +1,11 @@
-import localFont from "next/font/local";
+import { Noto_Sans } from 'next/font/google';
 import "./globals.css";
+import ThemeProvider from '../components/ThemeProvider'; // Adjust the path as necessary
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const notoSans = Noto_Sans({
+  subsets: ['latin'],
+  weight: ['400', '700'],  // Choose your desired font weights
+  display: 'swap',
 });
 
 export const metadata = {
@@ -20,8 +16,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+      <body className={notoSans.className}>
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
