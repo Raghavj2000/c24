@@ -1,6 +1,7 @@
 import { Noto_Sans } from 'next/font/google';
 import "./globals.css";
 import ThemeProvider from '../components/ThemeProvider'; // Adjust the path as necessary
+import Navbar from '@/components/Navbar/Navbar';
 
 const notoSans = Noto_Sans({
   subsets: ['latin'],
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={notoSans.className}>
         <ThemeProvider>
+            <Navbar/>
           {children}
         </ThemeProvider>
       </body>

@@ -1,10 +1,10 @@
 import ThemeToggle from "@/components/ThemeToggle";
 
-
 export default function Home() {
   return (
    <>
-  <ThemeToggle/>
+   <ThemeToggle/>
+  <p>India is my country</p>
    lol</>
   );
 }
